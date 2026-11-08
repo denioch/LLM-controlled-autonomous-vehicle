@@ -12,7 +12,7 @@ class LanguageModel(Node):
         super().__init__('language_model')
 
         # Gemini client
-        self.client = genai.Client(api_key="AIzaSyBAKzWy7LIApQwayW5Jgd8_bbBmUq2CLIQ")
+        self.client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY")) # provide your Gemini API key as an environment variable
         self.model = "gemini-2.5-flash"
         #self.model = "gemini-3-flash-preview" #for testing different models
 
